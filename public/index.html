@@ -13,16 +13,19 @@
             <select id="personID", onchange="storeSelectedElement()">
                 <option value="all">All</option>
             </select>
-            <textarea id="jsonInput" rows="20" cols="20"></textarea>
+            <div style="margin-left:20px;"> 
+                <h3>Insert in JSON</h3> 
+                <textarea id="jsonInput" rows="15" cols="30"></textarea> 
+            </div>
         </div>
-        <div style="margin-top: 20px;">
+        <div style="margin-top: 80px;">
             <button onclick="getPerson()">GET</button>
             <button onclick="createPerson()">POST</button>
             <button onclick="updatePerson()">PUT</button>
             <button onclick="deletePerson()">DELETE</button>
         </div>
     </div>
-    <div id="show">
+    <div id="show" style="margin-top: 80px;">
     </div>
 
   <script src="index.js">

@@ -17,7 +17,7 @@ async function getPerson() {
 
 function showData(data){
     const selectElement = document.getElementById('show');
-    selectElement.innerHTML = JSON.stringify(data).replace(',', '\n');
+    selectElement.innerHTML = JSON.stringify(data).replace(/,/g, '<br>');
 }
 
 async function generateOptions() {
@@ -47,6 +47,7 @@ async function createPerson() {
             });
         const data = await response.json();
         generateOptions();
+        selectedElement = 'all';
         showData(data);
     }catch(error){
         showData({"Invalid JSON format": error});
@@ -64,6 +65,7 @@ async function updatePerson() {
         body: jsonInput // Convert jsonData to a string
       });
       generateOptions();
+      selectedElement = 'all';
       const data = await response.json();
       showData(data);
     } catch (error) {
@@ -77,5 +79,6 @@ async function deletePerson() {
     const response = await fetch('/delete/' + selectedElement + '/', { method: 'DELETE' });
     data = await response.json()
     generateOptions()
+    selectedElement = 'all';
     showData(data)
 }
