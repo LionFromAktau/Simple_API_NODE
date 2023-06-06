@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Request Buttons</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column;">
+        <div>
+            <h1>Request Buttons</h1>
+        </div>
+        <div style="display: flex;">
+            <div style="border-radius: 10px 0 0 10px; background-color: gray; width: 20px;padding: 10px; font-size: 18px;">id:</div>
+            <select id="personID", onchange="storeSelectedElement()">
+                <option value="all">All</option>
+            </select>
+            <textarea id="jsonInput" rows="20" cols="20"></textarea>
+        </div>
+        <div style="margin-top: 20px;">
+            <button onclick="getPerson()">GET</button>
+            <button onclick="createPerson()">POST</button>
+            <button onclick="updatePerson()">PUT</button>
+            <button onclick="deletePerson()">DELETE</button>
+        </div>
+    </div>
+    <div id="show">
+    </div>
+
+  <script src="index.js">
+  </script>
+</body>
+</html>
